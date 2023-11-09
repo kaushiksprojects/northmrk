@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthMark Hospitals</title>
+
+    <!-- font cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!--custom css file-->
+    <link rel="stylesheet" href="/static/style/dashboard.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/site.webmanifest">
+
+</head>
+
+<!--Header section start-->
+
+<header class="header">
+    <div class="logo"><img src="/static/images/northmark.png" alt="img" class="img-thumbnail" width="50"></div>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <nav>
+        <a href="http://127.0.0.1:3000">Home</a>
+        <a href="{{url_for('book',email=account[4])}}">Book</a>
+        <a href="{{url_for('doctors')}}">Doctors</a>
+        <a href="{{url_for('login')}}">Logout</a>
+        <a href="{{url_for('dashboard',email=account[4])}}"></a>
+    </nav>
+
+    <!--<div class="menu-icons">
+            <div id="searchbox" class="fas fa-search"></div>
+            <div id="dashboard" class="fa-solid fa-user"><a href="{{url_for('dashboard',email=account[4])}}"></a></div>
+        </div>-->
+
+</header>
+
+
+<div class="home-back">
+    <img src="images/hos.jpg" alt="">
+</div>
+<div class="flip-card-present">
+    <div class="flip-card-inner">
+        <div class="flip-card-back">
+            <div class="card-content">
+                <h2>FUTURE BOOKINGS</h2>
+                <form action="http://127.0.0.1:3000/cancel?email={{account[4]}}" method="POST">
+                    <table border="1" cellspacing="20">
+                        <tr>
+                            <td class="northmark-form-label"> Doctor name </td>
+                            <td class="northmark-form-label"> Date </td>
+                            <td class="northmark-form-label"> Time </td>
+                        </tr>
+                        {% for row in future_bookings %}
+                        <tr>
+                            {% for d in row %}
+                            <td class="northmark-form-label">{{ d }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <input type="submit" value="Cancel booking" class="btn"></input>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-back">
+            <div class="card-content">
+                <h2>PAST BOOKINGS</h2>
+                <table border="1" cellspacing="20">
+                    <tr>
+                        <td class="northmark-form-label"> Doctor name </td>
+                        <td class="northmark-form-label"> Date </td>
+                        <td class="northmark-form-label"> Time </td>
+                    </tr>
+                    {% for row in prev_bookings %}
+                    <tr>
+                        {% for d in row %}
+                        <td class="northmark-form-label">{{ d }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .flip-card {
+        position: absolute;
+        width: 500px;
+        top: 500px;
+        left: 200px;
+        #outline: 1px solid #1ebeb6dd;
+        margin: auto;
+        height: 300px;
+        perspective: 1000px;
+        transition: outline 1s ease 0s;
+    }
+
+    .flip-card-present {
+        position: absolute;
+        width: 500px;
+        top: 200px;
+        left: 200px;
+        #outline: 1px solid #1ebeb6dd;
+        margin: auto;
+        height: 300px;
+        perspective: 1000px;
+        transition: outline 1s ease 0s;
+    }
+
+    .card-content h2 {
+        text-align: center;
+    }
+
+    .flip-card-front {
+        background-color: #f1f1f1;
+        overflow: hidden;
+    }
+
+    .attribute {
+        position: absolute;
+        bottom: 10px;
+    }
+
+    .northmark-mb-5 {
+        margin-bottom: 20px;
+    }
+
+    .northmark-main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+    }
+
+    .northmark-form-wrapper {
+        margin: 0 auto;
+        margin-top: 250px;
+        max-width: 550px;
+        width: 100%;
+        background: transparent;
+    }
+
+    .northmark-form-label {
+        #display: block;
+        font-weight: 500;
+        font-size: 16px;
+        color: #07074d;
+        margin-bottom: 12px;
+    }
+</style>
+<div class="flip-card2">
+    <div class="flip-card-inner2">
+        <div class="flip-card-back2">
+            <div class="card-content2">
+                <h2>PATIENT INFO</h2>
+                <div class="northmark-mb-5">
+                    <label for="name" class="northmark-form-label"> Full Name : </label>
+                    <label for="name" class="northmark-form-label"> {{account[0]}} </label>
+                </div>
+                <div class="northmark-mb-5">
+                    <label for="name" class="northmark-form-label"> Age : </label>
+                    <label for="name" class="northmark-form-label"> {{account[1]}} </label>
+                </div>
+                <div class="northmark-mb-5">
+                    <label for="name" class="northmark-form-label"> Gender : </label>
+                    <label for="name" class="northmark-form-label"> {{account[2]}} </label>
+                </div>
+                <div class="northmark-mb-5">
+                    <label for="name" class="northmark-form-label"> Phone : </label>
+                    <label for="name" class="northmark-form-label"> {{account[3]}} </label>
+                </div>
+                <div class="northmark-mb-5">
+                    <label for="name" class="northmark-form-label"> Email : </label>
+                    <label for="name" class="northmark-form-label"> {{account[4]}} </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .flip-card2 {
+        position: absolute;
+        width: 500px;
+        top: 200px;
+        left: 800px;
+        #outline: 1px solid #1ebeb6dd;
+        margin: auto;
+        height: 300px;
+        perspective: 1000px;
+        transition: outline 1s ease 0s;
+    }
+
+    .northmark-mb-5 {
+        margin-bottom: 20px;
+    }
+
+    .northmark-main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+    }
+
+    .northmark-form-wrapper {
+        margin: 0 auto;
+        margin-top: 250px;
+        max-width: 550px;
+        width: 100%;
+        background: transparent;
+    }
+
+    .northmark-form-label {
+        #display: block;
+        font-weight: 500;
+        font-size: 16px;
+        color: #07074d;
+        margin-bottom: 12px;
+    }
+
+    .card-content2 h2 {
+        text-align: center;
+    }
+
+    .flip-card-front {
+        background-color: #f1f1f1;
+        overflow: hidden;
+    }
+
+    .attribute {
+        position: absolute;
+        bottom: 10px;
+    }
+</style>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthMark Hospitals</title>
+    
+    <!-- font cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!--custom css file-->
+    <link rel="stylesheet" href="/static/style/loginstyle.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/site.webmanifest">
+    
+</head>
+<!--Header section start-->
+
+<header class="header">
+    <div class="logo"><img src="/static/images/northmark.png" alt="img" class="img-thumbnail" width="50" ></div>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <nav>
+        <a href="http://127.0.0.1:3000">Home</a>
+        <a href="{{url_for('book')}}">Book</a>
+        <a href="{{url_for('doctors')}}">Doctors</a>
+        <a href="{{url_for('login')}}">Login</a>
+    </nav>
+
+    <div class="menu-icons">
+    </div>
+
+</header>
+
+        <div class="background"></div>
+        <div class="home">
+            <div class="main-home">
+                <div class="main-inner-home">
+                </div>
+		<h2>Patient Portal</h2>
+                <div class="logreg-box">		    
+                    <div class="form-box login">  			          
+                      <body>
+                        <form action="http://127.0.0.1:3000/register" method = "POST">
+                            <label>{{ msg }}</label>
+			    <div class="input-box">
+                                <span class="icon"></span>
+                                <input name="first" type="text" required/>
+                                <label>First Name</label>
+                            </div>
+
+			    <div class="input-box">
+                                <span class="icon"></span>
+                                <input name="last" type="text" required/>
+                                <label>Surname</label>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon"></span>
+                                <input name="email" type="email" required/>
+                                <label>Email</label>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon"></span>
+                                <input name="inipwd" type="password" required/>
+                                <label>Password</label>
+                            </div>
+                            <div class="input-box">
+                                <span class="icon"></span>
+                                <input name="conpwd" type="password" required/>
+                                <label>Confirm Password</label>
+                            </div>
+                            <div class="remember-forgot">
+                                <label><input type="checkbox" required>I agree to the Terms & Conditions</label>
+                            </div>
+			    <input type="submit" value="submit" class="btn"></input>
+                            <div class="login-register">
+                                <p>Already have an account?<a href="{{url_for('login')}}" class="login-link"> Sign In</a></p>
+                            </div>
+                       </form>
+		     </body>      
+		  </div>                 	 
+                 </div>   
+                </div>
+                <div class="main-inner-home">
+                </div>
+            </div>
+        </div>
+
+<!--Header section end-->
+<!--custom js file link-->
+<script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthMark Hospitals</title>
+
+    <!-- font cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!--custom css file-->
+    <link rel="stylesheet" href="/static/style/bookstyle.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/site.webmanifest">
+
+</head>
+
+<body>
+
+    <!--Header section start-->
+
+    <header class="header">
+        <div class="logo"><img src="/static/images/northmark.png" alt="img" class="img-thumbnail" width="50"></div>
+
+        <nav>
+            <a href="http://127.0.0.1:3000">Home</a>
+            <a href="{{url_for('book')}}">Book</a>
+            <a href="{{url_for('doctors')}}">Doctors</a>
+            <a href="{{url_for('login')}}">Logout</a>
+        </nav>
+
+        <div class="menu-icons">
+        </div>
+
+    </header>
+
+    <div class="northmark-main-wrapper">
+        <div class="home-back">
+            <img src="" alt="">
+        </div>
+    </div>
+    <style>
+        * {
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+        }
+
+        .northmark-mb-5 {
+            margin-bottom: 20px;
+        }
+
+        .northmark-pt-3 {
+            padding-top: 12px;
+        }
+
+        .northmark-main-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px;
+        }
+
+        .northmark-form-wrapper {
+            margin: 0 auto;
+            margin-top: 250px;
+            max-width: 550px;
+            width: 100%;
+            background: transparent;
+        }
+
+        .northmark-form-label {
+            display: block;
+            font-weight: 500;
+            font-size: 16px;
+            color: #07074d;
+            margin-bottom: 12px;
+        }
+
+        .northmark-form-label-2 {
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .northmark-form-input {
+            width: 100%;
+            padding: 12px 24px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            background: white;
+            font-weight: 500;
+            font-size: 16px;
+            color: #6b7280;
+            outline: none;
+            resize: none;
+        }
+
+        .northmark-form-input:focus {
+            border-color: #6a64f1;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .northmark-btn {
+            text-align: center;
+            font-size: 16px;
+            border-radius: 6px;
+            padding: 14px 32px;
+            border: none;
+            font-weight: 600;
+            background-color: #76aca9;
+            color: white;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .northmark-btn:hover {
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .northmark--mx-3 {
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+
+        .northmark-px-3 {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        @media (min-width: 540px) {
+            .sm\:w-half {
+                width: 50%;
+            }
+        }
+    </style>
+
+</body>
+
+</html>

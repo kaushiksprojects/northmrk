@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthMark Hospitals</title>
+
+    <!-- font cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!--custom css file-->
+    <link rel="stylesheet" href="/static/style/dashboard.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
+</head>
+
+<body class="mainbook2">
+
+    <!--Header section start-->
+
+    <header class="header">
+        <div class="logo"><img src="/static/images/northmark.png" alt="img" class="img-thumbnail" width="50"></div>
+
+        <nav>
+            <a href="http://127.0.0.1:3000">Home</a>
+            <a href="{{url_for('doctors')}}">Doctors</a>
+            <a href="{{url_for('login')}}">Login</a>
+        </nav>
+
+        <div class="menu-icons">
+        </div>
+
+    </header>
+    <body1>
+
+        <div class="heading">
+            <h2>Please select who you would like to consult:</h2>
+        </div>
+        <div class="home-back">
+            <img src="images/hos.jpg" alt="">
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-back">
+                    <div class="card-content">
+                        <h2>Daniel Facundus</h2>
+                        <img src="/static/images/jack.jpg" alt="">
+                        <h1>General Surgery</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .flip-card {
+                position: absolute;
+                width: 300px;
+                top: 200px;
+                left: 150px;
+                outline: 1px solid #1ebeb6dd;
+                margin: auto;
+                height: 300px;
+                perspective: 1000px;
+                transition: outline 1s ease 0s;
+            }
+
+            .card-content h2 {
+                text-align: center;
+            }
+
+            .card-content h1 {
+                text-align: center;
+                color: #1ebeb6dd;
+            }
+
+            .card-content img {
+                height: 275px;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .flip-card-front {
+                background-color: #f1f1f1;
+                overflow: hidden;
+            }
+
+            .attribute {
+                position: absolute;
+                bottom: 10px;
+            }
+        </style>
+        <div class="flip-card2">
+            <div class="flip-card-inner2">
+                <div class="flip-card-back2">
+                    <div class="card-content2">
+                        <h2>Andreas Lander</h2>
+                        <img src="/static/images/matthew.jpg" alt="">
+                        <h1>Neurologist</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .flip-card2 {
+                position: absolute;
+                width: 300px;
+                top: 200px;
+                left: 464px;
+                outline: 1px solid #1ebeb6dd;
+                margin: auto;
+                height: 300px;
+                perspective: 1000px;
+                transition: outline 1s ease 0s;
+            }
+
+            .card-content2 h2 {
+                text-align: center;
+            }
+
+            .card-content2 img {
+                height: 275px;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .card-content2 h1 {
+                text-align: center;
+                color: #1ebeb6dd;
+            }
+
+            .flip-card-front {
+                background-color: #f1f1f1;
+                overflow: hidden;
+            }
+
+            .attribute {
+                position: absolute;
+                bottom: 10px;
+            }
+        </style>
+        <div class="flip-card3">
+            <div class="flip-card-inner3">
+                <div class="flip-card-back3">
+                    <div class="card-content3">
+                        <h2>Stefánia Piri</h2>
+                        <img src="/static/images/womdoc.jpg" alt="">
+                        <h1>Pediatrics</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .flip-card3 {
+                position: absolute;
+                width: 300px;
+                top: 200px;
+                left: 778px;
+                outline: 1px solid #1ebeb6dd;
+                margin: auto;
+                height: 300px;
+                perspective: 1000px;
+                transition: outline 1s ease 0s;
+            }
+
+            .card-content3 h2 {
+                text-align: center;
+            }
+
+            .card-content3 img {
+                height: 275px;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .card-content3 h1 {
+                text-align: center;
+                color: #1ebeb6dd;
+            }
+
+            .flip-card-front {
+                background-color: #f1f1f1;
+                overflow: hidden;
+            }
+
+            .attribute {
+                position: absolute;
+                bottom: 10px;
+            }
+        </style>
+        <div class="flip-card4">
+            <div class="flip-card-inner4">
+                <div class="flip-card-back4">
+                    <div class="card-content4">
+                        <h2>Danlio Pauli</h2>
+                        <img src="/static/images/danilo.jpg" alt="">
+                        <h1>Gynecologist</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .flip-card4 {
+                position: absolute;
+                width: 300px;
+                top: 200px;
+                left: 1092px;
+                outline: 1px solid #1ebeb6dd;
+                margin: auto;
+                height: 300px;
+                perspective: 1000px;
+                transition: outline 1s ease 0s;
+            }
+
+            .card-content4 h2 {
+                text-align: center;
+            }
+
+            .card-content4 img {
+                height: 275px;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .card-content4 h1 {
+                text-align: center;
+                color: #1ebeb6dd;
+            }
+
+            .flip-card-front {
+                background-color: #f1f1f1;
+                overflow: hidden;
+            }
+
+            .attribute {
+                position: absolute;
+                bottom: 10px;
+            }
+        </style>
+    </body1>
+
+
+</body>
+
+</html>
